@@ -21,15 +21,15 @@ import java.util.List;
 public class ChoucairAcademyStepDefinitions {
 
     @Before
-    public void setStage(){
+    public void setStage() {
         OnStage.setTheStage(new OnlineCast());
     }
 
     @Given("^than Mateo wants to learn automation at the academy Choucair$")
-    public void thanMateoWantsToLearnAutomationAtTheAcademyChoucair(List<AcademyChoucairData> academyChoucairData)  {
-       OnStage.theActorCalled("Mateo").wasAbleTo(OpenUp.thePage(),(Login.onThePage(academyChoucairData.get(0).getStrUser(),academyChoucairData.get(0).getStrPassword())));
-
-
+    public void thanMateoWantsToLearnAutomationAtTheAcademyChoucair(List<AcademyChoucairData> academyChoucairData) {
+        OnStage.theActorCalled("Mateo").wasAbleTo(OpenUp.thePage(),
+                (Login.onThePage(academyChoucairData.get(0).getStrUser(),
+                        academyChoucairData.get(0).getStrPassword())));
     }
 
 
@@ -41,7 +41,8 @@ public class ChoucairAcademyStepDefinitions {
 
     @Then("^he finds the course called$")
     public void heFindsTheCourseCalledMetodologiaBancolombia(List<AcademyChoucairData> academyChoucairData) {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(academyChoucairData.get(0).getStrCourse())));
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer
+                .toThe(academyChoucairData.get(0).getStrCourse())));
 
     }
 }
