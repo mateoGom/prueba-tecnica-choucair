@@ -8,3 +8,6 @@ public class ChoucairAcademyPage extends PageObject {
 
 
 }
+
+
+
